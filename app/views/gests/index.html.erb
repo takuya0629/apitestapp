@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Gests</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Body</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gests.each do |gest| %>
+      <tr>
+        <td><%= gest.name %></td>
+        <td><%= gest.body %></td>
+        <td><%= link_to 'Show', gest %></td>
+        <td><%= link_to 'Edit', edit_gest_path(gest) %></td>
+        <td><%= link_to 'Destroy', gest, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Gest', new_gest_path %>
